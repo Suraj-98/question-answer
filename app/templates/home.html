@@ -1,0 +1,17 @@
+<html>
+
+{% for question, answers in context.items %}
+    <li>question:- {{ question}}</li>
+    <ul>
+        {% for answer in answers %}
+            <li>Answer:-  {{ answer.answer }} {{ answer.like }} <a href="{% url 'like_answer' answer.id %}"><i class="fa fa-lock"></i>Like</a> </li>
+
+        {% endfor %}
+    </ul>
+{% endfor %}
+
+<li><a href="http://localhost:8000/create-question"><i class="fa fa-lock"></i>Post a question</a></li>
+
+<li><a href="http://localhost:8000/signoutpage"><i class="fa fa-lock"></i>Signout</a></li>
+
+</html>
